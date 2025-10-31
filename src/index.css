@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.text-font {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  
+}
