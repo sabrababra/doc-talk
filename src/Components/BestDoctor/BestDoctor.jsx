@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const BestDoctor = ({ doctor }) => {
     const { image, status, experience, name, education, registrationNumber } = doctor
     return (
-        <div className='bg-white rounded-2xl p-5 space-y-3 mt-5'>
+        <div className='bg-white rounded-2xl p-5 space-y-5 mt-5'>
             <img className='w-full h-[200px] rounded-2xl mx-auto' src={image} alt="" />
 
             <div className='space-x-2 flex items-center '>

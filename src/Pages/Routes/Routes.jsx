@@ -15,7 +15,7 @@ export const router =createBrowserRouter([
                 Component:Home
             },
             {
-                path:'/doctor-details/:id',
+                path:'/doctor-details/:reg',
                 Component:DoctorDetail
             }
         ]
