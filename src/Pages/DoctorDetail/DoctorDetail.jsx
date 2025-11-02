@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
+import regIcn from '../../assets/images/regIcon.png'
+import { addToStoreDB } from '../../Components/Utilities/AddToDB';
 
 const DoctorDetail = () => {
     const { reg } = useParams();
-    console.log("reg:",reg);
-    
-    const [doctors,setDoctors]=useState([]);
-    useEffect(()=>{
-        fetch("/doctors.js")
-        .then(res=>res.json())
-        .then(data=>{
-            const doctor=data.find(x=>x.registrationNumber==reg);
-            setDoctors(doctor)
-        })
-    },[reg]);
+    console.log("reg:", reg);
 
-    
-    console.log(doctors);
+    const [doctors, setDoctors] = useState([]);
+    useEffect(() => {
+        fetch("/doctors.js")
+            .then(res => res.json())
+            .then(data => {
+                const doctor = data.find(x => x.registrationNumber == reg);
+                setDoctors(doctor)
+            })
+    }, [reg]);
+
+    const handleAddAppointment=(reg)=>{
+        addToStoreDB(reg)
+    }
+
 
     return (
         <div className='mt-10 w-10/12 mx-auto'>
@@ -24,9 +28,78 @@ const DoctorDetail = () => {
                 <h1 className='text-3xl font-extrabold text-center'>Doctor’s Profile Details</h1>
                 <p className='text-center text-base font-medium text-[rgb(20,20,20,70%)]'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
             </div>
-            <div className='bg-white rounded-3xl p-5 space-y-3'>
-                <img src={doctors.image} alt="" />
+            <div className='bg-white rounded-3xl p-8 space-y-3 mt-5 flex flex-col md:flex-row lg:flex-row items-start gap-5'>
+                <img className='w-[350px] rounded-2xl h-[370px] object-cover' src={doctors?.image} alt="" />
+                <div className='space-y-4'>
+                    <div className='space-y-2'>
+                        <h1 className='text-3xl font-extrabold'>{doctors?.name}</h1>
+                        <h4 className='text-[rgb(15,15,15,60%)] text-lg font-medium w-2/12'>{doctors?.education}</h4>
+                    </div>
+                    <div>
+                        <p><span className='text-[rgb(15,15,15,50%)] font-medium text-[20px]'>Working at</span>
+                            <br />
+                            <span className='text-[20px] font-bold'>{doctors?.working}</span>
+                        </p>
+                    </div>
+                    <div className='border border-dashed border-[rgb(15,15,15,20%)]'></div>
+                    <div>
+                        <p className='flex items-center gap-3'>
+                            <img src={regIcn} alt="" />
+                            {doctors?.registrationNumber}
+                        </p>
 
+                    </div>
+                    <div className='border border-dashed border-[rgb(15,15,15,20%)]'></div>
+                    <div className='space-y-2'>
+                        <p>
+                            <span className='text-base font-bold'>Availability</span>
+                            <span>
+                                {
+                                    doctors?.availableDays?.map(day => <button className='btn ml-3 rounded-4xl bg-[rgb(255,160,0,10%)] border-[rgb(255,160,0,20%)] text-[#FFA000] text-sm font-medium'>
+                                        {day}
+                                    </button>)
+                                }
+                            </span>
+                        </p>
+                        <p>
+                            <span className='text-base font-extrabold mr-2'>Consultation Fee:</span>
+                            <span className='text-base font-extrabold text-[#176AE5]'>Taka:{doctors.visitFee}</span>
+                            <span className='text-base text-[rgb(20,20,20,50%)] font-medium'> (incl. Vat) </span>
+                            <span className='text-base text-[#176AE5] font-medium'>Per consultation</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className='bg-white rounded-3xl p-5 space-y-3 mt-5'>
+                <h1 className='text-2xl font-extrabold text-center'>Book an Appointment</h1>
+                <div className='border border-dashed border-[rgb(15,15,15,20%)]'></div>
+                <div className='flex items-center justify-between'>
+                    <h1 className='text-base font-bold'>Availability</h1>
+                    <button className={`btn rounded-4xl ${doctors?.availableDays?.includes(
+                        new Date().toLocaleString('en-US', { weekday: 'long' })
+                    )
+                        ? 'bg-green-100 text-green-700 border-green-300'
+                        : 'bg-red-100 text-red-700 border-red-300'
+                        }`}>
+                        {
+                            doctors?.availableDays?.includes(
+                                new Date().toLocaleString('en-US', { weekday: 'long' })
+                            )
+                                ? 'Doctor Available Today'
+                                : 'Not Available Today'
+                        }
+                    </button>
+                </div>
+                <div className='border border-dashed border-[rgb(15,15,15,20%)]'></div>
+            </div>
+            <div>
+                <Link to='/bookings'>
+                    <button 
+                    onClick={()=>handleAddAppointment(doctors.registrationNumber)}
+                    className='text-[20px] font-bold text-white rounded-4xl w-full bg-[#176AE5] py-2 mt-5'>Book Appointment Now</button>
+                </Link>
             </div>
         </div>
     );

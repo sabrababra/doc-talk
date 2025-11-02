@@ -3,7 +3,7 @@ import image1 from '../../assets/images/serviceCardImg1.png'
 import image2 from '../../assets/images/serviceCardImg2.png'
 import image3 from '../../assets/images/serviceCardImg3.png'
 import image4 from '../../assets/images/serviceCardImg4.png'
-import CountUp, { useCountUp } from 'react-countup';
+import CountUp from 'react-countup';
 
 const ServiceHistory = () => {
     const cardData = [
@@ -45,9 +45,9 @@ const ServiceHistory = () => {
                         <img src={card.image} alt="" />
                         <h1 className='font-extrabold text-5xl'>
                             <CountUp
-                            start={card.number-100}
+                            start={card.number-150}
                             end={card.number}
-                            duration={5}
+                            duration={8}
                             />
                             +
                             

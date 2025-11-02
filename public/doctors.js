@@ -7,7 +7,10 @@
     "speciality": "Internal Medicine",
     "experience": "10 years experience",
     "registrationNumber": "BMDC-12345",
-    "status": "available"
+    "status": "available",
+    "working": "Green Life Hospital, Dhaka",
+    "availableDays": ["Saturday", "Sunday", "Tuesday", "Thursday", "Friday"],
+    "visitFee": "800"
   },
   {
     "id": 2,
@@ -17,7 +20,10 @@
     "speciality": "Orthopedic Surgeon",
     "experience": "12 years experience",
     "registrationNumber": "BMDC-11223",
-    "status": "unavailable"
+    "status": "unavailable",
+    "working": "Square Hospital, Dhaka",
+    "availableDays": ["Sunday", "Monday", "Wednesday", "Thursday"],
+    "visitFee": "1000"
   },
   {
     "id": 3,
@@ -27,7 +33,10 @@
     "speciality": "Gynecologist",
     "experience": "8 years experience",
     "registrationNumber": "BMDC-14567",
-    "status": "available"
+    "status": "available",
+    "working": "Ibn Sina Hospital, Dhanmondi",
+    "availableDays": ["Saturday", "Sunday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "visitFee": "900"
   },
   {
     "id": 4,
@@ -37,7 +46,10 @@
     "speciality": "Cardiologist",
     "experience": "15 years experience",
     "registrationNumber": "BMDC-16789",
-    "status": "available"
+    "status": "available",
+    "working": "United Hospital, Dhaka",
+    "availableDays": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+    "visitFee": "1200"
   },
   {
     "id": 5,
@@ -47,7 +59,10 @@
     "speciality": "Dermatologist",
     "experience": "9 years experience",
     "registrationNumber": "BMDC-15432",
-    "status": "unavailable"
+    "status": "unavailable",
+    "working": "Popular Diagnostic Centre, Dhanmondi",
+    "availableDays": ["Monday", "Tuesday", "Thursday"],
+    "visitFee": "700"
   },
   {
     "id": 6,
@@ -57,7 +72,10 @@
     "speciality": "Neurologist",
     "experience": "14 years experience",
     "registrationNumber": "BMDC-18903",
-    "status": "available"
+    "status": "available",
+    "working": "Bangabandhu Sheikh Mujib Medical University (BSMMU)",
+    "availableDays": ["Saturday", "Sunday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "visitFee": "1100"
   },
   {
     "id": 7,
@@ -67,7 +85,10 @@
     "speciality": "Child Specialist",
     "experience": "11 years experience",
     "registrationNumber": "BMDC-13289",
-    "status": "available"
+    "status": "available",
+    "working": "Labaid Hospital, Dhaka",
+    "availableDays": ["Saturday", "Sunday", "Tuesday", "Wednesday", "Thursday"],
+    "visitFee": "850"
   },
   {
     "id": 8,
@@ -77,7 +98,10 @@
     "speciality": "ENT Specialist",
     "experience": "13 years experience",
     "registrationNumber": "BMDC-17754",
-    "status": "unavailable"
+    "status": "unavailable",
+    "working": "Dhaka Medical College Hospital",
+    "availableDays": ["Sunday", "Tuesday", "Thursday"],
+    "visitFee": "900"
   },
   {
     "id": 9,
@@ -87,7 +111,10 @@
     "speciality": "Eye Specialist",
     "experience": "9 years experience",
     "registrationNumber": "BMDC-19902",
-    "status": "available"
+    "status": "available",
+    "working": "Vision Eye Hospital, Dhaka",
+    "availableDays": ["Saturday", "Sunday", "Monday", "Wednesday"],
+    "visitFee": "800"
   },
   {
     "id": 10,
@@ -97,7 +124,10 @@
     "speciality": "Urologist",
     "experience": "10 years experience",
     "registrationNumber": "BMDC-12078",
-    "status": "available"
+    "status": "available",
+    "working": "Evercare Hospital, Dhaka",
+    "availableDays": ["Saturday", "Sunday", "Tuesday", "Thursday", "Friday"],
+    "visitFee": "1000"
   },
   {
     "id": 11,
@@ -107,7 +137,10 @@
     "speciality": "Psychiatrist",
     "experience": "7 years experience",
     "registrationNumber": "BMDC-17865",
-    "status": "unavailable"
+    "status": "unavailable",
+    "working": "National Institute of Mental Health",
+    "availableDays": ["Monday", "Tuesday", "Thursday", "Friday"],
+    "visitFee": "750"
   },
   {
     "id": 12,
@@ -117,6 +150,9 @@
     "speciality": "Anesthesiologist",
     "experience": "16 years experience",
     "registrationNumber": "BMDC-13092",
-    "status": "available"
+    "status": "available",
+    "working": "Apollo Hospitals Dhaka",
+    "availableDays": ["Saturday", "Sunday", "Tuesday", "Wednesday", "Thursday"],
+    "visitFee": "950"
   }
 ]

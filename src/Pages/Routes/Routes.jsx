@@ -3,6 +3,7 @@ import Root from "../Root/Root";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../HOME/Home";
 import DoctorDetail from "../DoctorDetail/DoctorDetail";
+import Booking from "../Booking/Booking";
 
 export const router =createBrowserRouter([
     {
@@ -17,6 +18,10 @@ export const router =createBrowserRouter([
             {
                 path:'/doctor-details/:reg',
                 Component:DoctorDetail
+            },
+            {
+                path:'/bookings',
+                Component:Booking
             }
         ]
     }
