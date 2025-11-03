@@ -4,12 +4,13 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../HOME/Home";
 import DoctorDetail from "../DoctorDetail/DoctorDetail";
 import Booking from "../Booking/Booking";
+import DetailsError from "../DetailsError/DetailsError";
 
 export const router =createBrowserRouter([
     {
         path:'/',
         Component:Root,
-        errorElement:ErrorPage,
+        errorElement:<ErrorPage/>,
         children:[
             {
                 path:'/',
@@ -17,6 +18,7 @@ export const router =createBrowserRouter([
             },
             {
                 path:'/doctor-details/:reg',
+                errorElement:<DetailsError/>,
                 Component:DoctorDetail
             },
             {

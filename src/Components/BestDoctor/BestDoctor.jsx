@@ -24,7 +24,7 @@ const BestDoctor = ({ doctor }) => {
             </p>
 
             <Link to={`/doctor-details/${registrationNumber}`}>
-                <button className='btn rounded-4xl border-[#176AE5] w-full bg-white text-lg font-bold text-[#176AE5]'>View Details</button>
+                <button className='btn rounded-4xl border-[#176AE5] w-full bg-white text-lg font-bold text-[#176AE5] hover:text-white hover:bg-[#176AE5]'>View Details</button>
             </Link>
 
         </div>

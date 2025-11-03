@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAppointment, removeFromStoreDB } from '../../Components/Utilities/AddToDB';
 import Swal from 'sweetalert2';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { Link } from 'react-router';
 
 // Triangle shape for bars
 const getPath = (x, y, width, height) =>
@@ -65,26 +66,29 @@ const BookingWithGraph = () => {
 
   return (
     <div className="w-10/12 mx-auto mt-10">
-      <h1 className="text-3xl font-extrabold text-gray-900 text-center">Today's Appointments</h1>
-
-      <div className="mt-8 w-full h-80 bg-white p-5 rounded-2xl">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Bar
-              dataKey="fee"
-              shape={(props) => <TriangleBar {...props} fill={props.payload.fill} />}
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+      {appointmentList.length > 0 &&
+        <>
+          <h1 className="text-3xl font-extrabold text-gray-900 text-center">Today's Appointments</h1>
+          <div className="mt-8 w-full h-80 bg-white p-5 rounded-2xl">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Bar
+                  dataKey="fee"
+                  shape={(props) => <TriangleBar {...props} fill={props.payload.fill} />}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </>
+      }
 
       <div className="mt-10">
-        {appointmentList.length > 0 ? (
-          appointmentList.map((item) => (
-            <div
+        {appointmentList.length > 0 ?
+          (
+            appointmentList.map((item) => (<div
               key={item.registrationNumber}
               className="bg-white p-6 rounded-2xl my-6 shadow-lg transition hover:shadow-xl duration-300"
             >
@@ -102,15 +106,21 @@ const BookingWithGraph = () => {
 
               <button
                 onClick={() => handleDelete(item.registrationNumber)}
-                className="text-lg font-semibold text-[#FF0000] border border-[#FF0000] rounded-full py-2 w-full mt-3"
+                className="text-lg font-semibold text-[#FF0000] border border-[#FF0000] rounded-full py-2 w-full mt-3 hover:text-white hover:bg-[#FF0000]"
               >
                 Cancel Appointment
               </button>
             </div>
-          ))
-        ) : (
-          <p className="text-center mt-10 text-lg text-gray-500">You have no appointments today.</p>
-        )}
+            )))
+          :
+          (<div className='min-h-[60vh] flex flex-col  items-center justify-center space-y-4'>
+            <h1 className='text-3xl font-extrabold text-center'>You Have not Booked any appointment yet</h1>
+            <p className="text-center text-lg text-gray-500">If you want go back to the home page and take appointment as your choice</p>
+            <Link to='/'>
+              <button className='text-base font-bold text-white rounded bg-[#176AE5] py-5 px-5 btn  mt-5'>Book an Appointment</button>
+            </Link>
+          </div>)
+        }
       </div>
     </div>
   );

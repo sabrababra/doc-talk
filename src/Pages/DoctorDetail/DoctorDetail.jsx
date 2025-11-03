@@ -4,10 +4,10 @@ import regIcn from '../../assets/images/regIcon.png'
 import { addToStoreDB } from '../../Components/Utilities/AddToDB';
 
 const DoctorDetail = () => {
-    const { reg } = useParams();
-    console.log("reg:", reg);
 
+    const { reg } = useParams();
     const [doctors, setDoctors] = useState([]);
+
     useEffect(() => {
         fetch("/doctors.js")
             .then(res => res.json())
@@ -17,7 +17,9 @@ const DoctorDetail = () => {
             })
     }, [reg]);
 
-    const handleAddAppointment=(reg)=>{
+
+
+    const handleAddAppointment = (reg) => {
         addToStoreDB(reg)
     }
 
@@ -55,7 +57,9 @@ const DoctorDetail = () => {
                             <span className='text-base font-bold'>Availability</span>
                             <span>
                                 {
-                                    doctors?.availableDays?.map(day => <button className='btn ml-3 rounded-4xl bg-[rgb(255,160,0,10%)] border-[rgb(255,160,0,20%)] text-[#FFA000] text-sm font-medium'>
+                                    doctors?.availableDays?.map((day, idx) => <button
+                                        key={idx}
+                                        className='btn ml-3 rounded-4xl bg-[rgb(255,160,0,10%)] border-[rgb(255,160,0,20%)] text-[#FFA000] text-sm font-medium'>
                                         {day}
                                     </button>)
                                 }
@@ -96,11 +100,25 @@ const DoctorDetail = () => {
             </div>
             <div>
                 <Link to='/bookings'>
-                    <button 
-                    onClick={()=>handleAddAppointment(doctors.registrationNumber)}
-                    className='text-[20px] font-bold text-white rounded-4xl w-full bg-[#176AE5] py-2 mt-5'>Book Appointment Now</button>
+                    <button
+                        onClick={() => handleAddAppointment(doctors.registrationNumber)}
+                        disabled={
+                            !doctors?.availableDays?.includes(
+                                new Date().toLocaleString('en-US', { weekday: 'long' })
+                            )
+                        }
+                        className={`text-[20px] font-bold rounded-4xl w-full py-2 mt-5 transition-colors duration-300 ${doctors?.availableDays?.includes(
+                            new Date().toLocaleString('en-US', { weekday: 'long' })
+                        )
+                                ? 'bg-[#176AE5] text-white hover:bg-blue-700'
+                                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            }`}
+                    >
+                        Book Appointment Now
+                    </button>
                 </Link>
             </div>
+
         </div>
     );
 };
