@@ -7,9 +7,9 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const ContactUs = () => {
     return (
-        <div className='grid grid-cols-6 w-10/12 mx-auto mt-20 items-center'>
+        <div className='grid grid-cols-1  lg:grid-cols-6 w-10/12 mx-auto mt-20 items-center gap-5'>
             <div
-                className="hero min-h-screen col-span-3 rounded-2xl overflow-hidden"
+                className="hero min-h-screen lg:col-span-3 rounded-2xl overflow-hidden"
                 style={{
                     backgroundImage:
                         `url(${bgImg})`,
@@ -33,10 +33,10 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
-            <div className='col-span-3'>
-                <div className='col-span-3 flex items-center justify-center'>
+            <div className='lg:col-span-3'>
+                <div className=' flex items-center justify-center'>
                     <div className='w-10/12'>
-                        <h2 className='text-3xl font-bold mb-6 text-[#176AE5]'>Get In Touch</h2>
+                        <h2 className='text-2xl lg:text-4xl font-bold mb-6 text-[#176AE5]'>Get In Touch</h2>
                         <form className='space-y-4'>
                             <input type="text" placeholder="Your Name" className="input input-bordered w-full" />
                             <input type="email" placeholder="Your Email" className="input input-bordered w-full" />

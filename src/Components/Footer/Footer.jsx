@@ -6,11 +6,11 @@ const Footer = () => {
     const location = useLocation();
     const currentPath = location.pathname
 
-    const getLinkClass = (path) => {
-        return currentPath === path ?
-            "font-bold text-black border-b-2 text-lg"
-            :
-            'text-lg font-medium text-[rgb(15,15,15,80%)] mx-3'
+  const getLinkClass=(path)=>{
+       return currentPath===path?
+        "font-bold text-black border-b-2 text-base lg:text-lg"
+        :
+        'text-base lg:text-lg font-medium text-[rgb(15,15,15,80%)] mx-3'
 
     }
     const link = <>
@@ -33,8 +33,8 @@ const Footer = () => {
     </>
     return (
         <footer className="footer footer-horizontal footer-center bg-white text-base-content rounded p-10 mt-20">
-            <Link to='/' className=" flex items-center gap-2 text-3xl font-extrabold">
-                <img src={navIcon} alt="" className='w-12 h-12' />
+            <Link to='/' className=" flex items-center gap-2 text-xl lg:text-3xl font-extrabold">
+                <img src={navIcon} alt="" className='w-8 h-8 lg:w-12 lg:h-12' />
                 Doctalk
             </Link>
             <nav className="grid grid-flow-col gap-4">

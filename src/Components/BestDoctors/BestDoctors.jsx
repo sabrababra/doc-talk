@@ -37,8 +37,8 @@ const BestDoctors = () => {
     return (
         <div className='w-10/12 mx-auto mt-20'>
             <div className='text-center text-[#0F0F0F] w-10/12 mx-auto space-y-3'>
-                <h1 className='font-extrabold text-4xl'>Our Best Doctors</h1>
-                <p className='text-base'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.</p>
+                <h1 className='font-extrabold text-2xl lg:text-4xl'>Our Best Doctors</h1>
+                <p className=' text-sm lg:text-base'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.</p>
             </div>
             {
                 spinner ?

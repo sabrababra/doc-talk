@@ -35,15 +35,15 @@ const ServiceHistory = () => {
 
     return (
         <div className='mt-20 space-y-3 w-10/12 mx-auto'>
-            <h1 className='text-center font-extrabold text-4xl'>We Provide Best Medical Services</h1>
-            <p className='text-base text-center'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. </p>
+            <h1 className='text-center font-extrabold text-2xl lg:text-4xl'>We Provide Best Medical Services</h1>
+            <p className=' text-sm lg:text-base text-center'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. </p>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5'>
                 {
                     cardData.map(card => <div 
                     key={card.id}
-                    className='bg-white rounded-2xl p-5 space-y-3'>
+                    className='bg-white rounded-2xl p-5 space-y-3 flex flex-col items-center justify-center lg:items-start'>
                         <img src={card.image} alt="" />
-                        <h1 className='font-extrabold text-5xl'>
+                        <h1 className='font-extrabold text-3xl lg:text-5xl'>
                             <CountUp
                             start={card.number-150}
                             end={card.number}
@@ -52,7 +52,7 @@ const ServiceHistory = () => {
                             +
                             
                         </h1>
-                        <p className='text-[rgb(15,15,15,60%)] text-xl font-semibold'>{card.title}</p>
+                        <p className='text-[rgb(15,15,15,60%)] text-lg lg:text-xl font-semibold'>{card.title}</p>
                     </div>)
                 }
                 

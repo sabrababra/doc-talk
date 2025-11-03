@@ -9,9 +9,9 @@ const Navbar = () => {
 
     const getLinkClass=(path)=>{
        return currentPath===path?
-        "font-bold text-black border-b-2 text-lg"
+        "font-bold text-black border-b-2 text-base lg:text-lg"
         :
-        'text-lg font-medium text-[rgb(15,15,15,80%)] mx-3'
+        'text-base lg:text-lg font-medium text-[rgb(15,15,15,80%)] mx-3'
 
     }
 
@@ -47,8 +47,8 @@ const Navbar = () => {
                             {link}
                         </ul>
                     </div>
-                    <Link to='/' className=" flex items-center gap-2 text-3xl font-extrabold">
-                        <img src={navIcon} alt="" className='w-12 h-12' />
+                    <Link to='/' className=" flex items-center gap-2 text-xl lg:text-3xl font-extrabold">
+                        <img src={navIcon} alt="" className='w-8 h-8 lg:w-12 lg:h-12' />
                         Doctalk
                     </Link>
                 </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
         
                 </div >
     <div className="navbar-end">
-        <a className="btn rounded-[99px] bg-[#176AE5] text-white font-bold text-xl py-6">Emergency</a>
+        <a className="btn rounded-[99px] bg-[#176AE5] text-white font-bold text-base lg:text-xl py-3 lg:py-6">Emergency</a>
     </div>
             </div >
         </div >

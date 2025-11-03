@@ -68,7 +68,7 @@ const BookingWithGraph = () => {
     <div className="w-10/12 mx-auto mt-10">
       {appointmentList.length > 0 &&
         <>
-          <h1 className="text-3xl font-extrabold text-gray-900 text-center">Today's Appointments</h1>
+          <h1 className="text-2xl lg:text-4xl font-extrabold text-gray-900 text-center">Today's Appointments</h1>
           <div className="mt-8 w-full h-80 bg-white p-5 rounded-2xl">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -94,10 +94,10 @@ const BookingWithGraph = () => {
             >
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>
-                  <h1 className="text-xl font-bold text-gray-900">{item.name}</h1>
-                  <p className="text-base text-gray-600">{item.education}</p>
+                  <h1 className=" text-lg lg:text-xl font-bold text-gray-900">{item.name}</h1>
+                  <p className="text-sm lg:text-base text-gray-600">{item.education}</p>
                 </div>
-                <p className="text-lg text-gray-700 font-semibold">
+                <p className="text-base lg:text-lg text-gray-700 font-semibold">
                   Appointment Fee: <span className="text-[#f97316]">{item.visitFee}</span> Taka + Vat
                 </p>
               </div>
@@ -106,7 +106,7 @@ const BookingWithGraph = () => {
 
               <button
                 onClick={() => handleDelete(item.registrationNumber)}
-                className="text-lg font-semibold text-[#FF0000] border border-[#FF0000] rounded-full py-2 w-full mt-3 hover:text-white hover:bg-[#FF0000]"
+                className="text-base lg:text-lg font-semibold text-[#FF0000] border border-[#FF0000] rounded-full py-2 w-full mt-3 hover:text-white hover:bg-[#FF0000]"
               >
                 Cancel Appointment
               </button>
@@ -114,10 +114,10 @@ const BookingWithGraph = () => {
             )))
           :
           (<div className='min-h-[60vh] flex flex-col  items-center justify-center space-y-4'>
-            <h1 className='text-3xl font-extrabold text-center'>You Have not Booked any appointment yet</h1>
-            <p className="text-center text-lg text-gray-500">If you want go back to the home page and take appointment as your choice</p>
+            <h1 className='text-2xl lg:text-4xl font-extrabold text-center'>You Have not Booked any appointment yet</h1>
+            <p className="text-center text-sm lg:text-base text-gray-500">If you want go back to the home page and take appointment as your choice</p>
             <Link to='/'>
-              <button className='text-base font-bold text-white rounded bg-[#176AE5] py-5 px-5 btn  mt-5'>Book an Appointment</button>
+              <button className='text-sm lg:text-base font-bold text-white rounded bg-[#176AE5] py-5 px-5 btn  mt-5'>Book an Appointment</button>
             </Link>
           </div>)
         }
