@@ -5,6 +5,7 @@ import Home from "../HOME/Home";
 import DoctorDetail from "../DoctorDetail/DoctorDetail";
 import Booking from "../Booking/Booking";
 import DetailsError from "../DetailsError/DetailsError";
+import ContactUs from "../ContactUs/ContactUs";
 
 export const router =createBrowserRouter([
     {
@@ -24,6 +25,10 @@ export const router =createBrowserRouter([
             {
                 path:'/bookings',
                 Component:Booking
+            },
+            {
+                path:"/contact",
+                Component:ContactUs
             }
         ]
     }
